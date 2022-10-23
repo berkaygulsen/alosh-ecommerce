@@ -1,55 +1,45 @@
-import React from 'react';
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
-    flex: 1;
-    margin: 3px;
-    height: 70vh;
-    position: relative;
-`
+  flex: 1;
+  margin: 3px;
+  height: 70vh;
+  position: relative;
+`;
 
 const Image = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ${mobile({ height: "20vh" })}
+`;
 
 const Info = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    background-color: rgba(0,0,0,0.2);
-    transition: all 0.5s ease;
-    cursor: pointer;
-    z-index: 2;
-`
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Title = styled.h1`
-    color: white;
+    color:white;
     margin-bottom: 20px;
-`
-const Desc = styled.p``
+`;
 
 const Button = styled.button`
-    border: 0.5px solid white;
-    padding: 15px;
-    background-color: transparent;
+    border:none;
+    padding: 10px;
+    background-color: white;
+    color:gray;
     cursor: pointer;
     font-weight: 600;
-    color: white;
-    transition: all 0.5s ease;
-    &:hover {
-        background-color: rgba(255,255,255,0.5);
-    }
-`
+`;
 
 const CategoryItem = ({ item }) => {
     return (
@@ -57,10 +47,8 @@ const CategoryItem = ({ item }) => {
             <Image src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Desc>{item.desc}</Desc>
-                <Button>SHOW NOW</Button>
+                <Button>SHOP NOW</Button>
             </Info>
-
         </Container>
     );
 };
